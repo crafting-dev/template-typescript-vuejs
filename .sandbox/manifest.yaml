@@ -1,0 +1,8 @@
+hooks:
+  build:
+    cmd: 'npm install @vue/cli'
+
+daemons:
+  app:
+    run:
+      cmd: 'npm run serve'
