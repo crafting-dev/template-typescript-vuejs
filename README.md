@@ -33,19 +33,9 @@ spec:
         protocol: HTTP/TCP
 ```
 
-[Vue-CLI](https://cli.vuejs.org/) was used for standard tooling. To install:
+[Vue-CLI](https://cli.vuejs.org/) was used for standard tooling.
 
-```bash
-npm install @vue/cli
-```
-
-To test installation:
-
-```bash
-npx @vue/cli --version
-```
-
-To create template app:
+To create template app from scratch:
 ```bash
 npx @vue/cli create .
 ```
@@ -54,7 +44,7 @@ npx @vue/cli create .
 
 To compile and hot-reload for development:
 ```
-npm run serve
+npm start
 ```
 
 To compile and minify for production:
