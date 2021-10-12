@@ -1,36 +1,35 @@
-# Vue Typescript template for Cloud Sandbox
+# Typescript Vue template for Cloud Sandbox
 
-This is a [Vue](https://vuejs.org/) typescript template, for quick development setup in Cloud Sandbox.
+This is a Typescript [Vue](https://vuejs.org/) template, for quick development setup in Cloud Sandbox.
 
 ## Specifications
 
 The following `App configuration` was used to create this template:
 
 ```yaml
-spec:
-  endpoints:
-  - http:
-      routes:
-      - backend:
-          port: http
-          target: ts-vue
-        path_prefix: /
-    name: app
-  services:
-  - description: Typescript/Vue template
-    name: ts-vue
-    workspace:
-      checkouts:
-      - path: template-typescript-vuejs
-        repo:
-          git: https://github.com/crafting-dev/template-typescript-vuejs.git
-      packages:
-      - name: nodejs
-        version: ~16
-      ports:
-      - name: http
-        port: 3000
-        protocol: HTTP/TCP
+endpoints:
+- http:
+    routes:
+    - backend:
+        port: http
+        target: ts-vue
+      path_prefix: /
+  name: app
+services:
+- description: Typescript/Vue template
+  name: ts-vue
+  workspace:
+    checkouts:
+    - path: template-typescript-vuejs
+      repo:
+        git: https://github.com/crafting-dev/template-typescript-vuejs.git
+    packages:
+    - name: nodejs
+      version: ~16
+    ports:
+    - name: http
+      port: 3000
+      protocol: HTTP/TCP
 ```
 
 [Vue-CLI](https://cli.vuejs.org/) was used for standard tooling.
