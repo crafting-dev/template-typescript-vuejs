@@ -40,7 +40,7 @@ export default defineComponent({
   methods: {
     async pingServer () {
       function createBaseUrl () {
-        const locationToMatchRegex = new RegExp('^http://localhost:[0-9]*')
+        const locationToMatchRegex = new RegExp('^http:\/\/localhost(:[0-9]+)?')
         if (locationToMatchRegex.test(window.location.origin)) {
           // The host:port serving the backend in a two endpoint setup
           return 'http://localhost:3000'
