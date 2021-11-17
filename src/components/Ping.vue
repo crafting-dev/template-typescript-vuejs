@@ -39,7 +39,19 @@ export default defineComponent({
   },
   methods: {
     async pingServer () {
-      const response = await fetch(`http://localhost:3000/ping?ping=${this.ping}`)
+      function createBaseUrl () {
+        const locationToMatchRegex = new RegExp('^http:\/\/localhost(:[0-9]+)?')
+        if (locationToMatchRegex.test(window.location.origin)) {
+          // The host:port serving the backend in a two endpoint setup
+          return 'http://localhost:3000'
+        }
+        // The current window URL in a single endpoint setup
+        // A /ping path_prefix serves the backend
+        return window.location.origin
+      }
+
+      const baseUrl = createBaseUrl()
+      const response = await fetch(`${baseUrl}/ping?ping=${this.ping}`)
       const data = await response.json()
       this.pong = data
     }
