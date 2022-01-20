@@ -42,7 +42,7 @@ export default defineComponent({
     async pingServer () {
       const baseUrl = /^http:\/\/localhost:[0-9]*$/.test(window.location.origin)
         ? 'http://localhost:3000'
-        : window.location.origin;
+        : process.env.VUE_APP_BACKEND_API_URL;
 
       const response = await fetch(`${baseUrl}/ping?ping=${this.ping}`);
       const data = await response.json();

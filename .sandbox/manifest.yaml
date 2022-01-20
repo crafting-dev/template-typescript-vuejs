@@ -8,3 +8,5 @@ daemons:
   app:
     run:
       cmd: npm start -- --port 3001
+      env:
+        - VUE_APP_BACKEND_API_URL=https://api$SANDBOX_ENDPOINT_DNS_SUFFIX
