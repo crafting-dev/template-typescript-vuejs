@@ -43,32 +43,31 @@ To run the app, you can do:
 npm start -- --port 3001
 ```
 
-## App Configuration
+## App Definition
 
-The following [App configuration](https://crafting.readme.io/docs/app-spec) was used to create this template:
+The following [App Definition](https://docs.sandboxes.cloud/docs/app-definition) was used to create this template:
 
 ```yaml
 endpoints:
-  - http:
+  - name: web
+    http:
       routes:
-        - backend:
-            port: http
+        - pathPrefix: '/'
+          backend:
             target: ts-vue
-          path_prefix: /
-    name: app
-services:
-  - description: Typescript/Vuejs template
-    name: ts-vue
-    workspace:
-      checkouts:
-        - path: src/template-typescript-vuejs
-          repo:
-            git: https://github.com/crafting-dev/template-typescript-vuejs.git
-      packages:
-        - name: nodejs
-          version: ~16
-      ports:
-        - name: http
-          port: 3001
-          protocol: HTTP/TCP
+            port: web
+workspaces:
+  - name: ts-vue
+    description: Template frontend using Ts/Vue
+    ports:
+      - name: web
+        port: 3001
+        protocol: HTTP/TCP
+    checkouts:
+      - path: frontend
+        repo:
+          git: https://github.com/crafting-dev/template-typescript-vuejs
+    packages:
+      - name: nodejs
+        version: 16.12.0
 ```
