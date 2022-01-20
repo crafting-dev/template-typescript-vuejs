@@ -1,6 +1,6 @@
 # Typescript/Vuejs template for Crafting Sandbox
 
-This is a Typescript/[Vue.js](https://vuejs.org/) template, configured for quick development setup in [Crafting Sandbox](https://crafting.readme.io/docs).
+This is a Typescript/[Vue.js](https://vuejs.org/) template, configured for quick development setup in [Crafting Sandbox](https://docs.sandboxes.cloud/docs).
 
 ## Specifications
 
