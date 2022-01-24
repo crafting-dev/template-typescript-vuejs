@@ -3,15 +3,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Ping from './components/Ping.vue'
+import { defineComponent } from 'vue';
+import Ping from './components/Ping.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     Ping
   }
-})
+});
 </script>
 
 <style>
